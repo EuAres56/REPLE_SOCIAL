@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #2c3e50;
+    --bg-color: #bdbebe;
+    --text-color: #34495e;
+    --light-gray: #e9ecef;
+    --dark-gray: #76787a;
+
+    /* Corres por critério */
+    --sem-informacao-color: #007bff;
+    /* Azul */
+    --critico-color: #dc3545;
+    /* Vermelho */
+    --alerta-color: #fd7e14;
+    /* Laranja */
+    --regular-color: #ffc107;
+    /* Amarelo */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide {
+    width: 90%;
+    max-width: 1000px;
+    background: #ffffff;
+    padding: 40px;
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    background: var(--light-gray);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+.list-item:hover {
+    color: #333;
+    background-color: #e2e6ea;
+}
+
+.list-item strong {
+    color: var(--secondary-color);
+}
+
+.nivel-critico {
+    background-color: var(--critico-color);
+    color: white;
+    border-left: 5px solid #a71d2a;
+}
+
+.nivel-alerta {
+    background-color: var(--alerta-color);
+    color: white;
+    border-left: 5px solid #c06310;
+}
+
+.nivel-regular {
+    background-color: var(--regular-color);
+    color: #333;
+    border-left: 5px solid #d49a00;
+}
+
+.sem-informacao {
+    background-color: var(--sem-informacao-color);
+    color: white;
+    border-left: 5px solid #0056b3;
+}
+
+/* Estilos específicos para o novo carrossel de tabelas */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    /* Esconde a barra de rolagem */
+    margin-top: 20px;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 1 0 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 18%;
+    transform: translateY(-50%);
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    z-index: 100;
+    user-select: none;
+}
+
+.carousel-arrow.left {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.carousel-arrow.right {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.indices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    text-align: left;
+}
+
+.indices-grid h4 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.indices-grid ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.5;
+}
+
+.indices-grid ul ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 0.95em;
+}
+
+@media (max-width: 768px) {
+    .slide {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
