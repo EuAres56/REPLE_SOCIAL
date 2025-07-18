@@ -6,10 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apresentação: Pesquisa Demográfica do Complexo da Penha</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.addEventListener("DOMContentLoaded", () => {
+                document.getElementById("body_theme").classList.add("dark_theme");
+            });
+        }
+    </script>
 </head>
 
-<body>
-
+<body id="body_theme">
+    <button id="toggle-theme" onclick="dark_theme()" aria-label="Alternar Tema">
+        🌞
+    </button>
     <section class="slide">
         <div class="marker-page cat-demografia">
             <p>DEMOGRÁFIA</p>
@@ -247,6 +257,21 @@
             <p>EDUCAÇÃO</p>
         </div>
         <h1>Comparativo de Notas IDEB (2019, 2021, 2023)</h1>
+        <p><strong>Nota metodológica:</strong> Para o cálculo da média do IDEB referente ao Complexo da Penha, foram
+            consideradas apenas as escolas com dados disponíveis nos levantamentos oficiais do INEP (Instituto Nacional
+            de Estudos e Pesquisas Educacionais Anísio Teixeira). As escolas foram agrupadas por etapa de ensino: Anos
+            Iniciais do Ensino Fundamental, Anos Finais do Ensino Fundamental e Ensino Médio.</p>
+
+        <p>Dentro de cada etapa, foi realizada a média simples entre as notas de todas as escolas com dados disponíveis.
+            Escolas sem nota registrada para um determinado ano ou etapa foram desconsideradas do cálculo, a fim de
+            manter a integridade dos resultados. Portanto, os valores apresentados representam uma média representativa
+            apenas das escolas com dados divulgados, podendo haver pequenas variações em relação à realidade geral da
+            região.</p>
+
+        <p>Essa metodologia foi aplicada de forma independente para cada ano analisado (2019, 2021 e 2023), permitindo
+            observar a evolução do desempenho educacional das escolas da região em comparação com as médias do Município
+            e do Estado do Rio de Janeiro.</p>
+
         <p>Abaixo, a evolução do IDEB comparando as escolas do Complexo da Penha com as médias do Município e do Estado.
         </p>
 
@@ -352,6 +377,36 @@
             <p>EDUCAÇÃO</p>
         </div>
         <h1>Classificação das Escolas por Nível de IDEB 2023</h1>
+        <details class="box-criterios" open>
+            <summary><strong>ℹ️ Entenda os Critérios de Classificação</strong></summary>
+            <div class="classificacao-nota-explicacao">
+                <p><strong>A meta nacional do IDEB é 6</strong>. Embora essa nota esteja distante da nota máxima (10),
+                    ela representa um patamar básico desejado para a educação brasileira.</p>
+
+                <p>Com isso, utilizamos três faixas de interpretação:</p>
+
+                <div class="nivel-box nivel-regular">
+                    <strong>✅ Regular (IDEB ≥ 5,5):</strong>
+                    <p>Desempenho razoável, ainda abaixo da meta, mas com estabilidade e potencial de crescimento.</p>
+                </div>
+
+                <div class="nivel-box nivel-alerta">
+                    <strong>⚠️ Alerta (5,0 ≤ IDEB &lt; 5,5):</strong>
+                    <p>Sinal de atenção: risco de queda no desempenho. Requer ações pontuais para evitar retrocessos.
+                    </p>
+                </div>
+
+                <div class="nivel-box nivel-critico">
+                    <strong>🚨 Crítico (IDEB &lt; 5,0):</strong>
+                    <p>Situação preocupante. As escolas precisam de apoio imediato para garantir o aprendizado dos
+                        alunos.</p>
+                </div>
+
+                <p><em>Esse modelo considera que mesmo a meta de 6 já é modesta, por isso é essencial acompanhar a
+                        trajetória das escolas e apoiar avanços graduais rumo à qualidade ideal.</em></p>
+            </div>
+        </details>
+
         <p>
             Análise feita com notas 2023, o ano da avaliação mais recente.
         </p>
@@ -391,25 +446,45 @@
     </section>
 
     <section class="slide">
-        <div class="marker-page  cat-criminalidade">
+        <div class="marker-page cat-criminalidade">
             <p>CRIMINALIDADE</p>
         </div>
+
         <h1>Análise de Criminalidade - CISP 22</h1>
-        <p><strong>CISP</strong> é a sigla para <strong>Circunscrição Integrada de Segurança Pública</strong>, uma
-            divisão territorial que integra a atuação das polícias no estado do Rio de Janeiro.</p>
-        <p>A **CISP 22** é a circunscrição de segurança pública responsável pela área da Penha, que inclui o Complexo da
-            Penha.</p>
-        <p>As áreas do Morro da Caixa D'Água, Morro da Fé e Morro da Paz, apesar estarem territorialmente fora da CISP
-            22, integrando a CISP 38, normalmente são englobadas ainda na CISP 22</p>
+
+        <p><strong>CISP</strong> significa <strong>Circunscrição Integrada de Segurança Pública</strong> e representa
+            uma subdivisão territorial criada para integrar e organizar a atuação conjunta das forças de segurança —
+            Polícia Civil e Polícia Militar — no estado do Rio de Janeiro. Cada CISP está inserida em um sistema
+            hierárquico mais amplo composto por outras áreas:</p>
+
+        <ul>
+            <li><strong>RISP</strong> – Região Integrada de Segurança Pública: divisão macrorregional que agrupa
+                diversas áreas de segurança.</li>
+            <li><strong>AISP</strong> – Área Integrada de Segurança Pública: divisão intermediária, que agrupa bairros e
+                comunidades com dinâmicas semelhantes de segurança.</li>
+            <li><strong>CISP</strong> – Circunscrição Integrada de Segurança Pública: unidade mais local, geralmente
+                ligada diretamente a um ou mais bairros ou regiões específicas.</li>
+        </ul>
+
+        <p>A <strong>CISP 22</strong> abrange a região da Penha, zona norte do Rio de Janeiro, e é a principal unidade
+            de análise para compreender a dinâmica da criminalidade que afeta o <strong>Complexo da Penha</strong>. Essa
+            CISP inclui os bairros e comunidades do entorno, sendo historicamente associada à atuação de grupos armados
+            e operações policiais frequentes.</p>
+
+        <p>É importante ressaltar que algumas comunidades tradicionalmente associadas ao Complexo da Penha — como o
+            <strong>Morro da Caixa D'Água</strong>, <strong>Morro da Fé</strong> e <strong>Morro da Paz</strong> — estão
+            tecnicamente sob jurisdição da <strong>CISP 38</strong>. No entanto, na prática, essas áreas são
+            frequentemente englobadas em análises e operações realizadas pela CISP 22, devido à sua conexão geográfica,
+            social e operacional com a Penha.</p>
 
         <h3>Mapa da área de atuação da CISP 22 e comunidades do Complexo da Penha</h3>
-        <div style="border: 1px solid #ddd; padding: 10px; margin-top: 20px;">
 
-            <iframe src="src/maps/mapa_complexo_penha.html" width="100%" height="400" style="border:0;"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+        <div id="map-cisp">
+            <iframe src="src/maps/mapa_complexo_penha.html" width="100%" height="400" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
+
 
     <section class="slide">
         <div class="marker-page  cat-criminalidade">

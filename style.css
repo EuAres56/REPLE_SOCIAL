@@ -11,6 +11,7 @@
     --cor-principal: #386088;
     --cor-fundo: #ffffff;
     --cor-fundo-2: #b6b6b6;
+    --cor-fundo-transparent: #b6b6b68a;
     --cor-texto: #222222;
     --cor-subtexto: #444444;
     --cor-borda: #e0e0e0;
@@ -43,15 +44,38 @@
     --cor-criminalidade-text: #551008;
 }
 
-body.dark-mode {
+body.dark-theme {
     --cor-fundo: #1A1A1A;
     --cor-fundo-2: #0e0d0d;
+    --cor-fundo-transparent: #0e0d0d86;
     --cor-texto: #F0F0F0;
     --cor-subtexto: #CCCCCC;
     --cor-borda: #333333;
     --cor-destaque: #34495E;
     --cor-conclusao-bg: #2C3E50;
     --cor-conclusao-borda: #5DADE2;
+}
+
+/* Botão de alternância */
+#toggle-theme {
+    position: fixed;
+    top: 1rem;
+    right: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    background: var(--cor-fundo-transparent);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px var(--cor-borda);
+    transition: background 0.3s ease;
+    z-index: 1000;
+}
+
+#toggle-theme:hover {
+    opacity: 0.9;
 }
 
 /* ===================================
@@ -71,6 +95,10 @@ body {
     font-size: 16px;
     line-height: 1.6;
     padding: 1rem;
+}
+
+summary {
+    cursor: pointer;
 }
 
 /* ===================================
@@ -133,18 +161,18 @@ p {
 }
 
 .cat-demografia {
-    background-color: var(--cor-demografia);
-    color: var(--cor-demografia-text);
+    background-color: var(--cor-demografia) !important;
+    color: var(--cor-demografia-text) !important;
 }
 
 .cat-educacao {
-    background-color: var(--cor-educacao);
-    color: var(var(--cor-educacao-text));
+    background-color: var(--cor-educacao) !important;
+    color: var(--cor-educacao-text) !important;
 }
 
 .cat-criminalidade {
-    background-color: var(--cor-criminalidade);
-    color: var(--cor-criminalidade-text);
+    background-color: var(--cor-criminalidade) !important;
+    color: var(--cor-criminalidade-text) !important;
 }
 
 /* ===================================
@@ -214,24 +242,35 @@ td {
 /* ===================================
    Separadores de grupo
    =================================== */
+.classificacao-nota-explicacao {
+    color: black !important;
+}
+
+.classificacao-nota-explicacao div * {
+    color: black !important;
+}
 
 .nivel-critico {
     background-color: var(--critico-color) !important;
+    color: black !important;
     border-left: 5px solid var(--critico-color-destaq) !important;
 }
 
 .nivel-alerta {
     background-color: var(--alerta-color) !important;
+    color: black !important;
     border-left: 5px solid var(--alerta-color-destaq) !important;
 }
 
 .nivel-regular {
     background-color: var(--regular-color) !important;
+    color: black !important;
     border-left: 5px solid var(--regular-color-destaq) !important;
 }
 
 .sem-informacao {
     background-color: var(--sem-informacao-color) !important;
+    color: black !important;
     border-left: 5px solid var(--sem-informacao-color-destaq) !important;
 }
 
@@ -345,18 +384,16 @@ td {
    =================================== */
 #box-formula {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
     border-radius: 12px;
     padding: 10px;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--cor-borda);
+    gap: 20px;
 }
 
 #box-formula-legenda {
     text-align: left;
-    width: 100%;
+    height: 100%;
+    width: fit-content;
 }
 
 .formula-ideb {
@@ -364,56 +401,50 @@ td {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 20px;
     padding: 1rem;
     border: 1px solid var(--cor-borda);
     border-radius: 12px;
     font-size: 1rem;
     text-align: center;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+    width: fit-content;
+    gap: 10px;
+    max-width: fit-content;
 }
 
 .formula-ideb span {
-    width: auto;
+    width: 50px;
 }
 
 .formula-element {
     font-weight: bold;
     white-space: normal;
-    width: auto;
-    flex-wrap: nowrap;
+    width: fit-content;
+    text-wrap: nowrap;
 }
 
 .formula-fraction {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    border: 1px solid #ccc;
     border-radius: 6px;
     padding: 0.5rem;
-    background: #fff;
-    min-width: 180px;
-    width: 100%;
-    max-width: 300px;
     box-sizing: border-box;
     margin: 0 auto;
+    width: 70px !important;
 }
 
-.formula-numerator,
-.formula-denominator {
-    padding: 0.2rem;
-}
-
-.formula-numerator {
-    border-bottom: 1px solid #aaa;
-    font-weight: 500;
+.formula-fraction span {
+    width: 70px;
 }
 
 .formula-denominator {
-    font-size: 0.95em;
-    color: #555;
+    border-top: 1px solid var(--cor-borda);
+}
+
+#map-cisp iframe {
+    padding: 0;
+    border-collapse: collapse;
+    border-radius: 12px;
 }
 
 
@@ -482,13 +513,17 @@ td {
     .bar-chart {
         gap: 5px;
     }
+
+    #box-formula {
+        flex-direction: column;
+    }
 }
 
 /* Médios: até 768px */
 @media (max-width: 768px) {
     .slide {
         width: auto;
-        max-width: 100%;
+        max-width: calc(100% - 0.6rem);
     }
 
     .conclusao {
@@ -513,6 +548,11 @@ td {
     .slide {
         width: auto;
         max-width: 100%;
+    }
+
+    .marker-page {
+        left: 4rem;
+        padding: 0 10PX;
     }
 
     table {
