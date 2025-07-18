@@ -1,41 +1,188 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* ===================================
+   IMPORTAÇÃO DE FONTES
+   =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
 
+/* ===================================
+   VARIÁVEIS DE CORES
+   =================================== */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #2c3e50;
-    --bg-color: #bdbebe;
-    --text-color: #34495e;
-    --light-gray: #e9ecef;
-    --dark-gray: #76787a;
-
-    /* Corres por critério */
-    --sem-informacao-color: #007bff;
+    /* --cor-principal: #2C3E50; */
+    --cor-principal: #386088;
+    --cor-fundo: #ffffff;
+    --cor-fundo-2: #b6b6b6;
+    --cor-texto: #222222;
+    --cor-subtexto: #444444;
+    --cor-borda: #e0e0e0;
+    --cor-destaque: #9ecceb;
+    --cor-conclusao-bg: #EAF2F8;
+    --cor-conclusao-borda: var(--cor-principal);
+    /* ==================================
+    Corres por critério 
+    ================================== */
+    --sem-informacao-color: var(--cor-destaque);
+    --sem-informacao-color-destaq: var(--cor-principal);
     /* Azul */
-    --critico-color: #dc3545;
+    --critico-color: #ec5463;
+    --critico-color-destaq: #cc0014;
     /* Vermelho */
-    --alerta-color: #fd7e14;
+    --alerta-color: #ff9239;
+    --alerta-color-destaq: #d15e00;
     /* Laranja */
-    --regular-color: #ffc107;
+    --regular-color: #f0d463;
+    --regular-color-destaq: #d4aa00;
     /* Amarelo */
+    /* ==================================
+    Corres dos marcadores
+    ================================== */
+    --cor-demografia: var(--cor-principal);
+    --cor-demografia-text: #131f35;
+    --cor-educacao: #3BAA75;
+    --cor-educacao-text: #115232;
+    --cor-criminalidade: #B03A2E;
+    --cor-criminalidade-text: #551008;
+}
+
+body.dark-mode {
+    --cor-fundo: #1A1A1A;
+    --cor-fundo-2: #0e0d0d;
+    --cor-texto: #F0F0F0;
+    --cor-subtexto: #CCCCCC;
+    --cor-borda: #333333;
+    --cor-destaque: #34495E;
+    --cor-conclusao-bg: #2C3E50;
+    --cor-conclusao-borda: #5DADE2;
+}
+
+/* ===================================
+   BASE E ESTRUTURA
+   =================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 body {
+    background-color: var(--cor-fundo-2);
+    color: var(--cor-texto);
     font-family: 'Roboto', sans-serif;
-    line-height: 1.8;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 1rem;
 }
+
+/* ===================================
+   TÍTULOS
+   =================================== */
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cor-principal);
+    margin: 2rem 0 1rem;
+}
+
+h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--cor-subtexto);
+    margin: 1.5rem 0 0.75rem;
+}
+
+/* ===================================
+   PARÁGRAFOS E TEXTOS
+   =================================== */
+p {
+    font-size: 16px;
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+}
+
+.conclusao {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    font-style: italic;
+    background-color: var(--cor-conclusao-bg);
+    border-left: 4px solid var(--cor-conclusao-borda);
+    color: var(--cor-texto);
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.marker-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    width: fit-content;
+    padding: 0.2rem;
+    border-radius: 0 25px 25px 0;
+    font-weight: 700;
+    height: 2rem;
+    background-color: var(--cor-principal);
+}
+
+.marker-page p {
+    color: var(--cor-texto-marcador) !important;
+    line-height: 2rem;
+    margin-right: 1rem;
+}
+
+.cat-demografia {
+    background-color: var(--cor-demografia);
+    color: var(--cor-demografia-text);
+}
+
+.cat-educacao {
+    background-color: var(--cor-educacao);
+    color: var(var(--cor-educacao-text));
+}
+
+.cat-criminalidade {
+    background-color: var(--cor-criminalidade);
+    color: var(--cor-criminalidade-text);
+}
+
+/* ===================================
+   TABELAS
+   =================================== */
+table {
+    min-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+}
+
+th {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+td {
+    font-size: 14px;
+    color: var(--cor-subtexto);
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* ===================================
+   Paginas (slides)
+   =================================== */
 
 .slide {
     width: 90%;
     max-width: 1000px;
-    background: #ffffff;
+    background: var(--cor-fundo);
     padding: 40px;
     margin: 30px 0;
     border-radius: 12px;
@@ -43,73 +190,11 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.slide:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--secondary-color);
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 25px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-th,
-td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid var(--light-gray);
-}
-
-th {
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
+/* ===================================
+   listas
+   =================================== */
 .list-item {
-    background: var(--light-gray);
+    background: var(--cor-destaque);
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -119,38 +204,40 @@ ul {
 
 .list-item:hover {
     color: #333;
-    background-color: #e2e6ea;
+    background-color: var(--cor-fundo-2);
 }
 
 .list-item strong {
     color: var(--secondary-color);
 }
 
+/* ===================================
+   Separadores de grupo
+   =================================== */
+
 .nivel-critico {
-    background-color: var(--critico-color);
-    color: white;
-    border-left: 5px solid #a71d2a;
+    background-color: var(--critico-color) !important;
+    border-left: 5px solid var(--critico-color-destaq) !important;
 }
 
 .nivel-alerta {
-    background-color: var(--alerta-color);
-    color: white;
-    border-left: 5px solid #c06310;
+    background-color: var(--alerta-color) !important;
+    border-left: 5px solid var(--alerta-color-destaq) !important;
 }
 
 .nivel-regular {
-    background-color: var(--regular-color);
-    color: #333;
-    border-left: 5px solid #d49a00;
+    background-color: var(--regular-color) !important;
+    border-left: 5px solid var(--regular-color-destaq) !important;
 }
 
 .sem-informacao {
-    background-color: var(--sem-informacao-color);
-    color: white;
-    border-left: 5px solid #0056b3;
+    background-color: var(--sem-informacao-color) !important;
+    border-left: 5px solid var(--sem-informacao-color-destaq) !important;
 }
 
-/* Estilos específicos para o novo carrossel de tabelas */
+/* ===================================
+   Carrosel
+   =================================== */
 .carousel-container {
     position: relative;
     overflow: hidden;
@@ -193,6 +280,9 @@ ul {
     border-radius: 5px 0 0 5px;
 }
 
+/* ===================================
+   Lista em grid
+   =================================== */
 .indices-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -218,22 +308,142 @@ ul {
     font-size: 0.95em;
 }
 
-@media (max-width: 768px) {
-    .slide {
-        padding: 20px;
+/* ===================================
+   Gráfico
+   =================================== */
+.bar-chart-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 100%;
+    padding: 1rem 0;
+}
+
+.bar {
+    position: relative;
+    height: 32px;
+    width: var(--width);
+    background-color: var(--cor-destaque);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.bar::before {
+    content: attr(data-label);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===================================
+   MEDIA QUERIES
+   =================================== */
+
+/* Extra Pequenos: até 480px */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+        padding: 0;
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 28px;
     }
 
     h2 {
-        font-size: 1.5em;
+        font-size: 22px;
+    }
+
+    .conclusao {
+        font-size: 16px;
+    }
+}
+
+/* Pequenos: até 600px */
+@media (max-width: 600px) {
+    body {
+        padding: 0.3rem;
+    }
+
+    .slide {
+        width: auto;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .marker-page {
+        left: 0.3rem;
+        padding: 0 10PX;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
     th,
     td {
-        padding: 10px;
-        font-size: 0.9em;
+        font-size: 13px;
+        padding: 5px 6px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .bar-chart {
+        gap: 5px;
+    }
+}
+
+/* Médios: até 768px */
+@media (max-width: 768px) {
+    .slide {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .conclusao {
+        padding: 0.75rem;
+    }
+
+    th {
+        font-size: 14px;
+    }
+
+    td {
+        font-size: 13.5px;
+    }
+}
+
+/* Grandes: a partir de 1024px */
+@media (min-width: 1024px) {
+    body {
+        padding: 2rem 4rem;
+    }
+
+    .slide {
+        width: auto;
+        max-width: 100%;
+    }
+
+    table {
+        max-width: 100%;
+    }
+
+    .conclusao {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
