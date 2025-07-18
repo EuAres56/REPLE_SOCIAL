@@ -527,28 +527,27 @@ td {
 }
 
 #sumario-flutuante a {
-    color: #ecf0f1;
+    color: white;
     text-decoration: none;
     font-weight: 500;
     display: block;
     padding: 6px 0;
 }
 
-#sumario-flutuante a:hover {
-    color: #AED6F1;
-}
-
 /* Botão toggle */
 #toggle-sumario {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #2C3E50;
+    top: 4.5rem;
+    right: 0.5rem;
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--cor-principal);
     color: white;
+    box-shadow: 0 2px 6px var(--cor-borda);
     border: none;
     padding: 10px 14px;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 50%;
     cursor: pointer;
     z-index: 1100;
 }
