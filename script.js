@@ -31,39 +31,64 @@ function dark_theme() {
   location.reload()
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const carousels = document.querySelectorAll('.carousel-container');
+function carrosel_left(element) {
+  const container = element.closest('.carousel-container');
+  const slidesContainer = container.querySelector('.carousel-slides');
+  const slide = container.querySelector('.carousel-slide');
+  const slideWidth = slide.offsetWidth;
 
-  carousels.forEach(container => {
-    const slidesContainer = container.querySelector('.carousel-slides');
-    const leftArrow = container.querySelector('.carousel-arrow.left');
-    const rightArrow = container.querySelector('.carousel-arrow.right');
-    const slides = container.querySelectorAll('.carousel-slide');
-    let currentIndex = 0;
+  slidesContainer.scrollLeft -= slideWidth;
+}
 
-    function updateCarousel() {
-      const offset = -currentIndex * 100;
-      slidesContainer.style.transform = `translateX(${offset}%)`;
+function carrosel_right(element) {
+  const container = element.closest('.carousel-container');
+  const slidesContainer = container.querySelector('.carousel-slides');
+  const slide = container.querySelector('.carousel-slide');
+  const slideWidth = slide.offsetWidth;
+
+  slidesContainer.scrollLeft += slideWidth;
+}
+
+const toggleBtn = document.getElementById('toggle-sumario');
+const sumario = document.getElementById('sumario-flutuante');
+const links = sumario.querySelectorAll('a');
+
+const isMobile = () => window.innerWidth <= 768;
+
+// Toggle menu
+toggleBtn.addEventListener('click', () => {
+  sumario.classList.toggle('ativo');
+
+  if (!isMobile()) {
+    toggleBtn.classList.toggle('oculto');
+  }
+});
+
+// Fecha ao clicar em um item do menu
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    sumario.classList.remove('ativo');
+    if (!isMobile()) {
+      toggleBtn.classList.remove('oculto');
     }
-
-    if (leftArrow) {
-      leftArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateCarousel();
-        }
-      });
-    }
-
-    if (rightArrow) {
-      rightArrow.addEventListener('click', () => {
-        if (currentIndex < slides.length - 1) {
-          currentIndex++;
-          updateCarousel();
-        }
-      });
-    }
-
-    updateCarousel();
   });
+});
+
+// Fecha ao clicar fora
+document.addEventListener('click', (e) => {
+  const isClickInsideMenu = sumario.contains(e.target);
+  const isClickOnButton = toggleBtn.contains(e.target);
+
+  if (!isClickInsideMenu && !isClickOnButton && sumario.classList.contains('ativo')) {
+    sumario.classList.remove('ativo');
+    toggleBtn.classList.remove('oculto');
+  }
+});
+
+// Fecha menu se redimensionar a tela com ele aberto
+window.addEventListener('resize', () => {
+  if (!isMobile()) {
+    sumario.classList.remove('ativo');
+    toggleBtn.classList.remove('oculto');
+  }
 });

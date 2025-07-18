@@ -12,6 +12,8 @@
     --cor-fundo: #ffffff;
     --cor-fundo-2: #b6b6b6;
     --cor-fundo-transparent: #b6b6b68a;
+    --cor-fundo-bg-menu: #386088d8;
+    --cor-fundo-shadow: rgba(0, 0, 0, 0.5);
     --cor-texto: #222222;
     --cor-subtexto: #444444;
     --cor-borda: #e0e0e0;
@@ -48,6 +50,8 @@ body.dark-theme {
     --cor-fundo: #1A1A1A;
     --cor-fundo-2: #0e0d0d;
     --cor-fundo-transparent: #0e0d0d86;
+    --cor-fundo-bg-menu: #38608842;
+    --cor-fundo-shadow: rgba(255, 255, 255, 0.3);
     --cor-texto: #F0F0F0;
     --cor-subtexto: #CCCCCC;
     --cor-borda: #333333;
@@ -55,6 +59,13 @@ body.dark-theme {
     --cor-conclusao-bg: #2C3E50;
     --cor-conclusao-borda: #5DADE2;
 }
+
+.dark-theme .slide {
+    box-shadow: 0 10px 20px var(--cor-fundo-shadow);
+}
+
+
+
 
 /* Botão de alternância */
 #toggle-theme {
@@ -81,6 +92,12 @@ body.dark-theme {
 /* ===================================
    BASE E ESTRUTURA
    =================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -88,17 +105,31 @@ body.dark-theme {
     list-style: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+html,
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     background-color: var(--cor-fundo-2);
     color: var(--cor-texto);
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    padding: 1rem;
+}
+
+details div {
+    border-radius: 12px;
 }
 
 summary {
     cursor: pointer;
+
 }
 
 /* ===================================
@@ -137,8 +168,6 @@ p {
     background-color: var(--cor-conclusao-bg);
     border-left: 4px solid var(--cor-conclusao-borda);
     color: var(--cor-texto);
-    padding: 1rem;
-    margin: 2rem 0;
 }
 
 .marker-page {
@@ -183,6 +212,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0 2rem;
+    border-radius: 12px;
 }
 
 th {
@@ -214,8 +244,7 @@ td {
     padding: 40px;
     margin: 30px 0;
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* ===================================
@@ -274,49 +303,68 @@ td {
     border-left: 5px solid var(--sem-informacao-color-destaq) !important;
 }
 
+.nivel-box strong {
+    padding-left: 15px;
+}
+
+.nivel-box p {
+    padding-left: 15px;
+}
+
 /* ===================================
    Carrosel
    =================================== */
 .carousel-container {
     position: relative;
+    width: 100%;
     overflow: hidden;
-    /* Esconde a barra de rolagem */
-    margin-top: 20px;
+    padding: 0 5vw;
+    gap: 10px;
 }
 
 .carousel-slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100vw;
 }
 
 .carousel-slide {
-    flex: 1 0 100%;
-    padding: 20px;
+    flex: 0 0 100%;
+    overflow-x: hidden;
     box-sizing: border-box;
+    scroll-snap-align: start;
+    width: 100vw;
+}
+
+.carousel-slide div {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 82vw;
+    border-radius: 12px;
+    align-content: center;
 }
 
 .carousel-arrow {
     position: absolute;
-    top: 18%;
+    top: 50%;
     transform: translateY(-50%);
-    background-color: var(--light-gray);
-    color: var(--secondary-color);
-    border: none;
-    padding: 10px 10px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    z-index: 100;
+    z-index: 10;
     user-select: none;
 }
 
 .carousel-arrow.left {
-    left: 0;
-    border-radius: 0 5px 5px 0;
+    left: 10px;
 }
 
 .carousel-arrow.right {
-    right: 0;
-    border-radius: 5px 0 0 5px;
+    right: 10px;
 }
 
 /* ===================================
@@ -443,10 +491,67 @@ td {
 
 #map-cisp iframe {
     padding: 0;
-    border-collapse: collapse;
     border-radius: 12px;
 }
 
+/* Menu lateral */
+#sumario-flutuante {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: var(--cor-fundo-bg-menu);
+    color: var(--cor-conclusao-bg);
+    padding: 2rem 1.2rem;
+    box-shadow: 0 10px 20px var(--cor-fundo-shadow);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#sumario-flutuante.ativo {
+    transform: translateX(0);
+}
+
+/* Links */
+#sumario-flutuante ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sumario-flutuante li {
+    margin-bottom: 1.2rem;
+}
+
+#sumario-flutuante a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 6px 0;
+}
+
+#sumario-flutuante a:hover {
+    color: #AED6F1;
+}
+
+/* Botão toggle */
+#toggle-sumario {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1100;
+}
 
 /* ===================================
    MEDIA QUERIES
@@ -459,16 +564,28 @@ td {
         padding: 0;
     }
 
+    .slide {
+        padding: 1rem 0;
+    }
+
     h1 {
-        font-size: 28px;
+        font-size: 25px;
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .conclusao {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+
+    .carousel-slide div table {
+        overflow: hidden;
     }
 }
 
@@ -482,7 +599,7 @@ td {
     .slide {
         width: auto;
         max-width: 100%;
-        padding: 10px;
+        padding: 1rem 0.3rem;
     }
 
     .marker-page {
@@ -517,6 +634,15 @@ td {
     #box-formula {
         flex-direction: column;
     }
+
+    .carousel-arrow {
+        display: none !important;
+    }
+
+    .carousel-slide div table {
+        overflow: hidden;
+    }
+
 }
 
 /* Médios: até 768px */
@@ -537,6 +663,20 @@ td {
     td {
         font-size: 13.5px;
     }
+
+    .carousel-arrow {
+        display: none !important;
+    }
+
+    #sumario-flutuante {
+        width: 80%;
+    }
+
+    #toggle-sumario {
+        display: block;
+        padding: 12px 16px;
+        font-size: 18px;
+    }
 }
 
 /* Grandes: a partir de 1024px */
@@ -548,6 +688,7 @@ td {
     .slide {
         width: auto;
         max-width: 100%;
+        padding-top: 1rem;
     }
 
     .marker-page {
@@ -563,5 +704,21 @@ td {
         max-width: 900px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .carousel-slide div table {
+        overflow: hidden;
+    }
+
+    .carousel-container {
+        padding: 0;
+    }
+
+    .carousel-slide div {
+        width: 100%;
+    }
+
+    #toggle-sumario.oculto {
+        display: none;
     }
 }

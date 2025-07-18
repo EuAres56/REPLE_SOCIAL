@@ -20,11 +20,32 @@
     <button id="toggle-theme" onclick="dark_theme()" aria-label="Alternar Tema">
         🌞
     </button>
+
+    <!-- Botão retrátil -->
+    <button id="toggle-sumario" aria-label="Abrir ou fechar sumário">☰</button>
+
+    <!-- Menu lateral -->
+    <nav id="sumario-flutuante">
+        <ul>
+            <li><a href="#visao-geral">Visão Geral</a></li>
+            <li><a href="#populacao-jovem">População Jovem</a></li>
+            <li><a href="#totais">Totais // Conclusões</a></li>
+            <li><a href="#ideb">O que é o IDEB?</a></li>
+            <li><a href="#comparativo-ideb">Comparativo IDEB</a></li>
+            <li><a href="#classificacao-ideb">Classificação IDEB</a></li>
+            <li><a href="#criminalidade">Criminalidade</a></li>
+            <li><a href="#indices-crime">Índices em Destaque</a></li>
+            <li><a href="#conclusao">Conclusão Final</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Análise por Comunidade - Visão Geral -->
     <section class="slide">
         <div class="marker-page cat-demografia">
             <p>DEMOGRÁFIA</p>
         </div>
-        <h1>Análise por Comunidade - Visão Geral</h1>
+        <h1 id="visao-geral">Análise por Comunidade - Visão Geral</h1>
 
         <table>
             <thead>
@@ -147,11 +168,12 @@
 
     </section>
 
+    <!-- Análise Detalhada - População Jovem (5 a 19 anos) -->
     <section class="slide">
         <div class="marker-page cat-demografia">
             <p>DEMOGRÁFIA</p>
         </div>
-        <h1>Análise Detalhada - População Jovem (5 a 19 anos)</h1>
+        <h1 id="populacao-jovem">Análise Detalhada - População Jovem (5 a 19 anos)</h1>
         <ul>
             <li class="list-item"><strong>População Jovem Total:</strong> 8.394 pessoas</li>
             <li class="list-item"><strong>Representatividade:</strong> Essa faixa etária corresponde a
@@ -179,11 +201,12 @@
         </div>
     </section>
 
+    <!-- Totais do Complexo da Penha // Principais Conclusões -->
     <section class="slide">
         <div class="marker-page cat-demografia">
             <p>DEMOGRÁFIA</p>
         </div>
-        <h1>Totais do Complexo da Penha</h1>
+        <h1 id="totais">Totais do Complexo da Penha</h1>
         <ul>
             <li class="list-item"><strong>Área Total:</strong> 1,605 km²</li>
             <li class="list-item"><strong>Densidade Demográfica Média:</strong> 22.961 hab/km²</li>
@@ -205,12 +228,13 @@
         </ul>
     </section>
 
+    <!-- O que é o IDEB? -->
     <section class="slide">
         <div class="marker-page cat-educacao">
             <p>EDUCAÇÃO</p>
         </div>
 
-        <h1>O que é o IDEB?</h1>
+        <h1 id="ideb">O que é o IDEB?</h1>
 
         <p>O <strong>Índice de Desenvolvimento da Educação Básica (IDEB)</strong> é um indicador oficial que avalia a
             qualidade da educação nas escolas públicas brasileiras. Ele combina o desempenho dos alunos em avaliações
@@ -251,12 +275,12 @@
             92%).</p>
     </section>
 
-
+    <!-- Comparativo de Notas IDEB (2019, 2021, 2023) -->
     <section class="slide">
         <div class="marker-page  cat-educacao">
             <p>EDUCAÇÃO</p>
         </div>
-        <h1>Comparativo de Notas IDEB (2019, 2021, 2023)</h1>
+        <h1 id="comparativo-ideb">Comparativo de Notas IDEB (2019, 2021, 2023)</h1>
         <p><strong>Nota metodológica:</strong> Para o cálculo da média do IDEB referente ao Complexo da Penha, foram
             consideradas apenas as escolas com dados disponíveis nos levantamentos oficiais do INEP (Instituto Nacional
             de Estudos e Pesquisas Educacionais Anísio Teixeira). As escolas foram agrupadas por etapa de ensino: Anos
@@ -289,7 +313,7 @@
                 <tr>
                     <td>Complexo da Penha</td>
                     <td>5,01</td>
-                    <td>5,1</td>
+                    <td>5,10</td>
                     <td>4,56</td>
                 </tr>
                 <tr>
@@ -327,7 +351,7 @@
                 <tr>
                     <td>Município do Rio de Janeiro</td>
                     <td>4,65</td>
-                    <td>5,5</td>
+                    <td>5,50</td>
                     <td>5,70</td>
                 </tr>
                 <tr>
@@ -372,11 +396,12 @@
         </table>
     </section>
 
+    <!-- Classificação das Escolas por Nível de IDEB 2023 -->
     <section class="slide">
         <div class="marker-page  cat-educacao">
             <p>EDUCAÇÃO</p>
         </div>
-        <h1>Classificação das Escolas por Nível de IDEB 2023</h1>
+        <h1 id="classificacao-ideb">Classificação das Escolas por Nível de IDEB 2023</h1>
         <details class="box-criterios" open>
             <summary><strong>ℹ️ Entenda os Critérios de Classificação</strong></summary>
             <div class="classificacao-nota-explicacao">
@@ -445,12 +470,13 @@
         </ul>
     </section>
 
+    <!-- Análise de Criminalidade - CISP 22 -->
     <section class="slide">
         <div class="marker-page cat-criminalidade">
             <p>CRIMINALIDADE</p>
         </div>
 
-        <h1>Análise de Criminalidade - CISP 22</h1>
+        <h1 id="criminalidade">Análise de Criminalidade - CISP 22</h1>
 
         <p><strong>CISP</strong> significa <strong>Circunscrição Integrada de Segurança Pública</strong> e representa
             uma subdivisão territorial criada para integrar e organizar a atuação conjunta das forças de segurança —
@@ -475,7 +501,8 @@
             <strong>Morro da Caixa D'Água</strong>, <strong>Morro da Fé</strong> e <strong>Morro da Paz</strong> — estão
             tecnicamente sob jurisdição da <strong>CISP 38</strong>. No entanto, na prática, essas áreas são
             frequentemente englobadas em análises e operações realizadas pela CISP 22, devido à sua conexão geográfica,
-            social e operacional com a Penha.</p>
+            social e operacional com a Penha.
+        </p>
 
         <h3>Mapa da área de atuação da CISP 22 e comunidades do Complexo da Penha</h3>
 
@@ -485,12 +512,596 @@
         </div>
     </section>
 
-
+    <!-- Índices de Criminalidade em Destaque -->
     <section class="slide">
         <div class="marker-page  cat-criminalidade">
             <p>CRIMINALIDADE</p>
         </div>
-        <h1>Índices de Criminalidade em Destaque</h1>
+        <h1 id="indices-crime">Números Criminais por Semestre</h1>
+
+        <div class="carousel-container">
+            <a onclick="carrosel_left(this)" class="carousel-arrow left"><span>&#10094;</span></a>
+            <div class="carousel-slides">
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 1º Semestre (2021)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>82</td>
+                                    <td>2.207</td>
+                                    <td>7.994</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>417</td>
+                                    <td>14.354</td>
+                                    <td>37.598</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>16</td>
+                                    <td>769</td>
+                                    <td>2.506</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>1.424</td>
+                                    <td>54.118</td>
+                                    <td>97.318</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>1.230</td>
+                                    <td>31.893</td>
+                                    <td>54.345</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>578</td>
+                                    <td>17.536</td>
+                                    <td>30.139</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>66</td>
+                                    <td>4.840</td>
+                                    <td>22.243</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>288</td>
+                                    <td>9.094</td>
+                                    <td>25.376</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>4.101</strong></td>
+                                    <td><strong>134.811</strong></td>
+                                    <td><strong>278.435</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 2º Semestre (2021)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>67</td>
+                                    <td>1.838</td>
+                                    <td>6.811</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>360</td>
+                                    <td>13.753</td>
+                                    <td>36.353</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>14</td>
+                                    <td>831</td>
+                                    <td>2.604</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>1.159</td>
+                                    <td>47.720</td>
+                                    <td>84.816</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>1.008</td>
+                                    <td>36.019</td>
+                                    <td>60.281</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>763</td>
+                                    <td>23.732</td>
+                                    <td>42.775</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>43</td>
+                                    <td>4.003</td>
+                                    <td>21.487</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>249</td>
+                                    <td>8.804</td>
+                                    <td>24.916</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>3.663</strong></td>
+                                    <td><strong>136.700</strong></td>
+                                    <td><strong>280.043</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 1º Semestre (2022)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>142</td>
+                                    <td>2.009</td>
+                                    <td>6.754</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>432</td>
+                                    <td>15.315</td>
+                                    <td>39.618</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>19</td>
+                                    <td>898</td>
+                                    <td>2.742</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>1.280</td>
+                                    <td>50.466</td>
+                                    <td>84.090</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>1.074</td>
+                                    <td>50.565</td>
+                                    <td>79.832</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>867</td>
+                                    <td>34.513</td>
+                                    <td>63.768</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>42</td>
+                                    <td>3.761</td>
+                                    <td>21.176</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>274</td>
+                                    <td>9.895</td>
+                                    <td>27.238</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>4.130</strong></td>
+                                    <td><strong>167.422</strong></td>
+                                    <td><strong>325.218</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 2º Semestre (2022)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>147</td>
+                                    <td>2.115</td>
+                                    <td>7.265</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>420</td>
+                                    <td>16.010</td>
+                                    <td>41.297</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>27</td>
+                                    <td>1.013</td>
+                                    <td>2.885</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>1.388</td>
+                                    <td>51.462</td>
+                                    <td>86.395</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>1.057</td>
+                                    <td>52.230</td>
+                                    <td>82.257</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>836</td>
+                                    <td>33.200</td>
+                                    <td>62.574</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>26</td>
+                                    <td>3.954</td>
+                                    <td>20.432</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>262</td>
+                                    <td>10.698</td>
+                                    <td>28.665</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>4.163</strong></td>
+                                    <td><strong>170.682</strong></td>
+                                    <td><strong>331.770</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 1º Semestre (2023)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>114</td>
+                                    <td>2.537</td>
+                                    <td>7.499</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>460</td>
+                                    <td>16.730</td>
+                                    <td>43.001</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>26</td>
+                                    <td>881</td>
+                                    <td>2.805</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>966</td>
+                                    <td>43.462</td>
+                                    <td>73.727</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>896</td>
+                                    <td>52.329</td>
+                                    <td>82.025</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>838</td>
+                                    <td>31.432</td>
+                                    <td>60.371</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>51</td>
+                                    <td>3.914</td>
+                                    <td>23.218</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>306</td>
+                                    <td>11.703</td>
+                                    <td>32.116</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>3.657</strong></td>
+                                    <td><strong>162.988</strong></td>
+                                    <td><strong>324.762</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 2º Semestre (2023)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>109</td>
+                                    <td>2.015</td>
+                                    <td>6.450</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>457</td>
+                                    <td>18.257</td>
+                                    <td>46.216</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>19</td>
+                                    <td>920</td>
+                                    <td>2.723</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>878</td>
+                                    <td>41.460</td>
+                                    <td>69.244</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>1.107</td>
+                                    <td>54.349</td>
+                                    <td>84.618</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>884</td>
+                                    <td>33.104</td>
+                                    <td>63.224</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>36</td>
+                                    <td>3.317</td>
+                                    <td>22.182</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>296</td>
+                                    <td>11.584</td>
+                                    <td>32.053</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>3.786</strong></td>
+                                    <td><strong>165.006</strong></td>
+                                    <td><strong>326.710</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 1º Semestre (2024)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>88</td>
+                                    <td>2.297</td>
+                                    <td>6.534</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>493</td>
+                                    <td>19.554</td>
+                                    <td>48.957</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>27</td>
+                                    <td>1.038</td>
+                                    <td>2.924</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>955</td>
+                                    <td>49.309</td>
+                                    <td>78.094</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>941</td>
+                                    <td>58.616</td>
+                                    <td>91.776</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>995</td>
+                                    <td>39.483</td>
+                                    <td>74.793</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>58</td>
+                                    <td>3.723</td>
+                                    <td>24.739</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>257</td>
+                                    <td>13.221</td>
+                                    <td>36.050</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>3.814</strong></td>
+                                    <td><strong>187.241</strong></td>
+                                    <td><strong>363.867</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <h3>Crimes Cometidos - 2º Semestre (2024)</h3>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CRIME</th>
+                                    <th>CISP 22</th>
+                                    <th>Município RJ</th>
+                                    <th>Estado RJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HOMICÍDIOS</td>
+                                    <td>95</td>
+                                    <td>2.212</td>
+                                    <td>6.445</td>
+                                </tr>
+                                <tr>
+                                    <td>LESÕES</td>
+                                    <td>594</td>
+                                    <td>19.676</td>
+                                    <td>49.009</td>
+                                </tr>
+                                <tr>
+                                    <td>ESTUPROS</td>
+                                    <td>25</td>
+                                    <td>991</td>
+                                    <td>2.895</td>
+                                </tr>
+                                <tr>
+                                    <td>ROUBOS</td>
+                                    <td>1.104</td>
+                                    <td>53.607</td>
+                                    <td>87.346</td>
+                                </tr>
+                                <tr>
+                                    <td>FURTOS</td>
+                                    <td>920</td>
+                                    <td>55.559</td>
+                                    <td>87.753</td>
+                                </tr>
+                                <tr>
+                                    <td>PATRIMONIAIS</td>
+                                    <td>827</td>
+                                    <td>37.655</td>
+                                    <td>72.536</td>
+                                </tr>
+                                <tr>
+                                    <td>DROGAS</td>
+                                    <td>58</td>
+                                    <td>3.132</td>
+                                    <td>23.467</td>
+                                </tr>
+                                <tr>
+                                    <td>AMEAÇAS</td>
+                                    <td>247</td>
+                                    <td>12.118</td>
+                                    <td>33.830</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></td>
+                                    <td><strong>3.870</strong></td>
+                                    <td><strong>184.950</strong></td>
+                                    <td><strong>363.281</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a onclick="carrosel_right(this)" class="carousel-arrow right"><span>&#10095;</span></a>
+        </div>
+
+        <h1>Índices de Criminalidade em Destaque por Ano</h1>
         <p>Análise das proporções de criminalidade, comparando o total de ocorrências entre CISP 22, Município e Estado.
         </p>
 
@@ -498,655 +1109,78 @@
             <div>
                 <h4><strong>2021</strong></h4>
                 <ul>
-                    <li><strong>1º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>3,04%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>48,42%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
-                    <li><strong>2º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>2,68%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>48,81%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
+                    <li>Os crimes da CISP 22 representaram <strong>2,86%</strong> do total do Município.</li>
+                    <li>Os crimes do Município representaram <strong>48,52%</strong> do total do Estado.</li>
                 </ul>
             </div>
 
             <div>
                 <h4><strong>2022</strong></h4>
                 <ul>
-                    <li><strong>1º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>2,47%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>51,48%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
-                    <li><strong>2º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>2,44%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>51,45%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
+                    <li>Os crimes da CISP 22 representaram <strong>2,45%</strong> do total do Município.</li>
+                    <li>Os crimes do Município representaram <strong>51,46%</strong> do total do Estado.</li>
                 </ul>
             </div>
 
             <div>
                 <h4><strong>2023</strong></h4>
                 <ul>
-                    <li><strong>1º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>2,24%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>50,19%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
-                    <li><strong>2º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>2,29%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>50,51%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
+                    <li>Os crimes da CISP 22 representaram <strong>2,26%</strong> do total do Município.</li>
+                    <li>Os crimes do Município representaram <strong>50,35%</strong> do total do Estado.</li>
                 </ul>
             </div>
 
             <div>
                 <h4><strong>2024</strong></h4>
                 <ul>
-                    <li><strong>1º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>2,04%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>51,46%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
-                    <li><strong>2º Semestre:</strong>
-                        <ul>
-                            <li>Os crimes da CISP 22 representaram <strong>2,09%</strong> do total do Município.</li>
-                            <li>Os crimes do Município representaram <strong>50,91%</strong> do total do Estado.</li>
-                        </ul>
-                    </li>
+                    <li>Os crimes da CISP 22 representaram <strong>2,06%</strong> do total do Município.</li>
+                    <li>Os crimes do Município representaram <strong>51,18%</strong> do total do Estado.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-
+    <!-- Conclusão: Análise de Proporções da CISP 22 -->
     <section class="slide">
-        <div class="marker-page  cat-criminalidade">
+        <div class="marker-page cat-criminalidade">
             <p>CRIMINALIDADE</p>
         </div>
-        <h1>Números Criminais por Semestre</h1>
 
-        <div class="carousel-container">
-            <div class="carousel-arrow left"><span>&#10094;</span></div>
-            <div class="carousel-slides">
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 1º Semestre (2021)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>82</td>
-                                <td>2.207</td>
-                                <td>7.994</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>417</td>
-                                <td>14.354</td>
-                                <td>37.598</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>16</td>
-                                <td>769</td>
-                                <td>2.506</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>1.424</td>
-                                <td>54.118</td>
-                                <td>97.318</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>1.230</td>
-                                <td>31.893</td>
-                                <td>54.345</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>578</td>
-                                <td>17.536</td>
-                                <td>30.139</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>66</td>
-                                <td>4.840</td>
-                                <td>22.243</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>288</td>
-                                <td>9.094</td>
-                                <td>25.376</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>4.101</strong></td>
-                                <td><strong>134.811</strong></td>
-                                <td><strong>278.435</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <h1 id="conclusao">Conclusão: Análise de Proporções da CISP 22</h1>
 
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 2º Semestre (2021)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>67</td>
-                                <td>1.838</td>
-                                <td>6.811</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>360</td>
-                                <td>13.753</td>
-                                <td>36.353</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>14</td>
-                                <td>831</td>
-                                <td>2.604</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>1.159</td>
-                                <td>47.720</td>
-                                <td>84.816</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>1.008</td>
-                                <td>36.019</td>
-                                <td>60.281</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>763</td>
-                                <td>23.732</td>
-                                <td>42.775</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>43</td>
-                                <td>4.003</td>
-                                <td>21.487</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>249</td>
-                                <td>8.804</td>
-                                <td>24.916</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>3.663</strong></td>
-                                <td><strong>136.700</strong></td>
-                                <td><strong>280.043</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <p>
+            A partir da comparação semestral entre os anos de 2021 e 2024, observa-se uma redução percentual na
+            participação da <strong>CISP 22</strong> no total de crimes registrados no município do Rio de Janeiro.
+        </p>
 
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 1º Semestre (2022)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>142</td>
-                                <td>2.009</td>
-                                <td>6.754</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>432</td>
-                                <td>15.315</td>
-                                <td>39.618</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>19</td>
-                                <td>898</td>
-                                <td>2.742</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>1.280</td>
-                                <td>50.466</td>
-                                <td>84.090</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>1.074</td>
-                                <td>50.565</td>
-                                <td>79.832</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>867</td>
-                                <td>34.513</td>
-                                <td>63.768</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>42</td>
-                                <td>3.761</td>
-                                <td>21.176</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>274</td>
-                                <td>9.895</td>
-                                <td>27.238</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>4.130</strong></td>
-                                <td><strong>167.422</strong></td>
-                                <td><strong>325.218</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <p>
+            No entanto, essa queda proporcional não significa uma diminuição real da criminalidade local. Na verdade, os
+            números da CISP 22 têm se mantido relativamente estáveis, com variações pouco significativas ao longo dos
+            semestres.
+        </p>
 
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 2º Semestre (2022)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>147</td>
-                                <td>2.115</td>
-                                <td>7.265</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>420</td>
-                                <td>16.010</td>
-                                <td>41.297</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>27</td>
-                                <td>1.013</td>
-                                <td>2.885</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>1.388</td>
-                                <td>51.462</td>
-                                <td>86.395</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>1.057</td>
-                                <td>52.230</td>
-                                <td>82.257</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>836</td>
-                                <td>33.200</td>
-                                <td>62.574</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>26</td>
-                                <td>3.954</td>
-                                <td>20.432</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>262</td>
-                                <td>10.698</td>
-                                <td>28.665</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>4.163</strong></td>
-                                <td><strong>170.682</strong></td>
-                                <td><strong>331.770</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <p>
+            O que explica a redução percentual é o fato de que tanto o <strong>município</strong> quanto o
+            <strong>estado</strong> vêm registrando aumentos consistentes nas ocorrências, especialmente em outras
+            regiões.
+        </p>
 
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 1º Semestre (2023)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>114</td>
-                                <td>2.537</td>
-                                <td>7.499</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>460</td>
-                                <td>16.730</td>
-                                <td>43.001</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>26</td>
-                                <td>881</td>
-                                <td>2.805</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>966</td>
-                                <td>43.462</td>
-                                <td>73.727</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>896</td>
-                                <td>52.329</td>
-                                <td>82.025</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>838</td>
-                                <td>31.432</td>
-                                <td>60.371</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>51</td>
-                                <td>3.914</td>
-                                <td>23.218</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>306</td>
-                                <td>11.703</td>
-                                <td>32.116</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>3.657</strong></td>
-                                <td><strong>162.988</strong></td>
-                                <td><strong>324.762</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <p>
+            Essa tendência pode gerar uma <strong>falsa percepção de melhora</strong> na segurança da CISP 22, quando,
+            na prática, trata-se de uma <strong>estabilidade em meio ao crescimento geral da criminalidade</strong> no
+            município e no estado do Rio de Janeiro.
+        </p>
 
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 2º Semestre (2023)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>109</td>
-                                <td>2.015</td>
-                                <td>6.450</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>457</td>
-                                <td>18.257</td>
-                                <td>46.216</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>19</td>
-                                <td>920</td>
-                                <td>2.723</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>878</td>
-                                <td>41.460</td>
-                                <td>69.244</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>1.107</td>
-                                <td>54.349</td>
-                                <td>84.618</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>884</td>
-                                <td>33.104</td>
-                                <td>63.224</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>36</td>
-                                <td>3.317</td>
-                                <td>22.182</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>296</td>
-                                <td>11.584</td>
-                                <td>32.053</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>3.786</strong></td>
-                                <td><strong>165.006</strong></td>
-                                <td><strong>326.710</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 1º Semestre (2024)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>88</td>
-                                <td>2.297</td>
-                                <td>6.534</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>493</td>
-                                <td>19.554</td>
-                                <td>48.957</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>27</td>
-                                <td>1.038</td>
-                                <td>2.924</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>955</td>
-                                <td>49.309</td>
-                                <td>78.094</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>941</td>
-                                <td>58.616</td>
-                                <td>91.776</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>995</td>
-                                <td>39.483</td>
-                                <td>74.793</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>58</td>
-                                <td>3.723</td>
-                                <td>24.739</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>257</td>
-                                <td>13.221</td>
-                                <td>36.050</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>3.814</strong></td>
-                                <td><strong>187.241</strong></td>
-                                <td><strong>363.867</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="carousel-slide">
-                    <h3>Crimes Cometidos - 2º Semestre (2024)</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CRIME</th>
-                                <th>CISP 22</th>
-                                <th>Município RJ</th>
-                                <th>Estado RJ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>HOMICÍDIOS</td>
-                                <td>95</td>
-                                <td>2.212</td>
-                                <td>6.445</td>
-                            </tr>
-                            <tr>
-                                <td>LESÕES</td>
-                                <td>594</td>
-                                <td>19.676</td>
-                                <td>49.009</td>
-                            </tr>
-                            <tr>
-                                <td>ESTUPROS</td>
-                                <td>25</td>
-                                <td>991</td>
-                                <td>2.895</td>
-                            </tr>
-                            <tr>
-                                <td>ROUBOS</td>
-                                <td>1.104</td>
-                                <td>53.607</td>
-                                <td>87.346</td>
-                            </tr>
-                            <tr>
-                                <td>FURTOS</td>
-                                <td>920</td>
-                                <td>55.559</td>
-                                <td>87.753</td>
-                            </tr>
-                            <tr>
-                                <td>PATRIMONIAIS</td>
-                                <td>827</td>
-                                <td>37.655</td>
-                                <td>72.536</td>
-                            </tr>
-                            <tr>
-                                <td>DROGAS</td>
-                                <td>58</td>
-                                <td>3.132</td>
-                                <td>23.467</td>
-                            </tr>
-                            <tr>
-                                <td>AMEAÇAS</td>
-                                <td>247</td>
-                                <td>12.118</td>
-                                <td>33.830</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TOTAL</strong></td>
-                                <td><strong>3.870</strong></td>
-                                <td><strong>184.950</strong></td>
-                                <td><strong>363.281</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="carousel-arrow right"><span>&#10095;</span></div>
-        </div>
+        <p>
+            É fundamental que essa estabilidade seja interpretada com cautela, pois embora não haja agravamento
+            evidente, também não há avanços significativos na redução dos indicadores da região.
+        </p>
     </section>
 
 
 
-
 </body>
+
 <script src="script.js"></script>
 
 </html>
